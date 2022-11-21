@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Caveat:wght@500&family=Lato&family=Montserrat:wght@500&family=Oswald:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Antonio', 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    color: aliceblue;
+    
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    background: rgb(45, 53, 80);
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    height: auto;
+    padding: 8px 0 8px 0;
+    background: rgb(45, 53, 80);
+}
+
+main{
+    width: 100%;
+    height: auto;
+    /* min-height: 90vh; */
+    position: relative;
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    margin-bottom: 90px;
+    z-index: 1;
+    background: rgb(45, 53, 80);
+}
+
+.user-interface{
+    position: relative;
+    height: auto;
+    width: 20%;
+    min-width: 200px;
+    display: block;
+    padding: 0.25%;
+    margin-bottom: 10px;
+}
+
+.new-movie, .view-control{
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    background: rgba(116, 116, 116, 0.164);
+    padding: 10px 10px 20px 15px 
+}
+
+.new-movie::-webkit-scrollbar, .view-control::-webkit-scrollbar{
+    width: 0.2rem;
+    background: white;
+}
+
+.new-movie::-webkit-scrollbar-thumb, .view-control::-webkit-scrollbar-thumb{
+    background: gray;
+}
+
+.view-control{
+    margin-top: 10px;
+}
+
+.heading{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.sub-heading{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.add-movie-form  input[type="text"]{
+    color: rgba(0, 0, 0, 0.781);
+    margin: 1px 0 5px 0; 
+    width: 70%;
+}
+
+.add-movie-form input[type="radio"]{
+    margin-right: 5px;
+}
+
+.add-movie-form label{
+    color: white;
+}
+
+#new-movie-add-btn{
+    width: 30%;
+    padding: 1px 0 1px 0;
+    margin-top: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.395);   
+    cursor: pointer;
+}
+
+.movies-sec{
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+}
+
+.movies{
+    width: 100%;
+    height: auto;
+    overflow:hidden;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0.25%;
+
+}
+
+.movie{
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden{
+    display: none;
+}
+
+.movie-cntrl{
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.movie-delete{
+    height: 20px;
+    width: 20px;
+    background: url("images/delete.png");
+    background-position: center;
+    background-size: contain;
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+.movie-edit{
+    height: 20px;
+    width: 20px;
+    background: url("images/edit.png");
+    background-position: center;
+    background-size: contain;
+    opacity: 0.7;
+}
+
+.movie-delete:hover, .movie-edit:hover{
+    opacity: 1;
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 4px 1px rgba(0, 0, 0, 0.363));
+}
+
+.movie-bck{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: grey;
+    opacity: 0.2;
+}
+
+.movie-img-sec{
+    position: relative;
+    height: 70%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie-img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.movie-info{
+    border-top: 1px solid rgba(128, 128, 128, 0.404);
+    position: relative;
+    width: 100%;
+    height: 30%;
+}
+
+.info-tab{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    padding: 1px;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+
+.movie-ovrview{
+    position: relative;
+    width: 100%;
+    height: 70%;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.movie-year, .movie-runtime, .movie-rating-sec{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.star{
+    width: 25%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+}
+
+.star{
+    background: url('images/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.movie-rating{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-titl{
+    width: 100%;
+    height: 30%;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px rgba(128, 128, 128, 0.411) solid;
+}
+
+.movie-cast, .movie-plot{
+    position: relative;
+    width: 100%;
+    height: 70%;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 0.7rem;
+    text-align: justify;
+    padding: 0 5px 0 5px;
+}
+
+.movie-cast::-webkit-scrollbar, .movie-plot::-webkit-scrollbar{
+    width: 0.2rem;
+    background: white;
+}
+
+.movie-cast::-webkit-scrollbar-thumb, .movie-plot::-webkit-scrollbar-thumb{
+    background: gray;
+}
+
+.info-tab-slctor{
+    height: 20%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tab-slctor{
+    color: white;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.selected{
+    background: rgba(0, 0, 0, 0.395);
+}
+
+.show{
+    display: flex;
+}
+
+.movie-edit-window{
+    background: rgba(116, 116, 116, 0.815);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 30;
+    top: 0%;
+    left: 0%;
+    font-size: 0.7rem;
+    transform: translateY(110%);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.movie-edit-window-show{
+    transform: translateY(0);
+}
+
+.movie-edit-window > form{
+    position: relative;
+    width: 99%;
+    margin-left: 5%;
+}
+
+.movie-edit-window > .heading{
+ margin-bottom: 4px;
+ margin-top: 3px;
+ font-size: 0.8rem;
+}
+
+.movie-edit-window input{
+    position: relative;
+    color: rgba(0, 0, 0, 0.781);
+    width: 94%;
+}
+
+.movie-edit-window label{
+    color: white;
+}
+
+#edit-movie-save-btn, #edit-movie-cancel-btn{
+    width: 30%;
+    padding: 1px 0 1px 0;
+    margin-top: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.395); 
+    font-size: 0.7rem;  
+    cursor: pointer;
+}
+
+footer{
+    background: rgba(116, 116, 116, 0.164);
+    padding: 8px 0 2px 0 ;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    z-index: -1;
+    position: absolute;
+}
+
+@media screen and (min-width: 3000px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 7.8333%;
+        /* padding-top: 15.666%; */
+        height: 12.53328vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 2750px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 8.59%;
+        /* padding-top: 17.181%; */
+        height: 13.7448vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 2500px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 9.5%;
+        /* padding-top: 19%; */
+        height: 15.2vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 2250px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 10.611%;
+        /* padding-top: 21.2222%; */
+        height: 16.97776vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 12%;
+        /* padding-top: 24%; */
+        height: 19.2vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 1750px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 13.785%;
+        /* padding-top: 27.571%; */
+        height: 22.0568vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 16.1666%;
+        /* padding-top: 32.3333%; */
+        height: 25.8666vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 19.5%;
+        /* padding-top: 39%; */
+        height: 31.2vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .movies{
+        padding: 0.25%;
+    }
+    .movie{
+        width: 24.5%;
+        /* padding-top: 49%; */
+        height: 39.2vw;
+        margin: 0.25%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    main{
+        flex-direction: column;
+    }
+    .user-interface{
+        width: 100%;
+        height: 25vh;
+        display: flex;
+    }
+
+    .view-control{
+        margin-top: 0;
+    }
+
+    .movies{
+        padding: 0.5%;
+    }
+    .movie{
+        width: 32.333%;
+        /* padding-top: 64.666%; */
+        height: 64.666vw;
+        margin: 0.5%;
+    }
+
+    .add-movie-form  input[type="text"]{
+        width: 95%;
+    }
+
+    .heading{
+        margin-bottom: 5px;
+    }
+    
+    .sub-heading{
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
+
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    .movies{
+        padding: 0.5%;
+    }
+    .movie{
+        width: 49%;
+        /* padding-top: 98%; */
+        height: 98vw;
+        margin: 0.5%;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .movies{
+        padding: 0.5%;
+    }
+    .movie{
+        width: 95%;
+        /* padding-top: 198%; */
+        height: 190vw;
+        margin: 2.5%;
+    }
+    /* .movie-year, .movie-runtime, .movie-rating{
+        font-size: 0.6rem;
+    }
+    .movie-titl{
+        font-size: 0.75rem;
+    }
+    .movie-cast, .movie-plot{
+        font-size: 0.6rem;
+    } */
+}
+
+
+
+
+
+
+

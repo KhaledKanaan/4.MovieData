@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Data</title>
+</head>
+<body>
+    <header>Movie Data</header>
+    <main>
+        <div class="main-bck"></div>
+        <div class="user-interface">
+            <div class="new-movie">
+                <h2 class="heading">Add new movie</h2>
+                <form class="add-movie-form" action="" id="add-movie">
+                    <label for="new-movie-titl">Movie title</label> <br>
+                    <input type="text" id="new-movie-titl"> <br>
+
+                    <label for="new-movie-year">Year</label> <br>
+                    <input type="text" id="new-movie-year"> <br>
+
+                    <label for="new-movie-rating">Rating</label> <br>
+                    <input type="text" id="new-movie-rating"> <br>
+
+                    <label for="new-movie-runtime">Runtime (min)</label> <br>
+                    <input type="text" id="new-movie-runtime"> <br>
+
+                    <label for="new-movie-img-url">Image adress</label> <br>
+                    <input type="text" id="new-movie-img-url"> <br>
+
+                    <label for="new-movie-cast">Cast</label> <br>
+                    <input type="text" id="new-movie-cast"> <br>
+
+                    <label for="new-movie-plot">plot</label> <br>
+                    <input type="text" id="new-movie-plot"> <br>
+
+                    <input type="submit" id="new-movie-add-btn" value="Add"> <br>
+
+                </form>
+            </div>
+            <div class="view-control">
+                <h2 class="heading">View control</h2>
+                <div class="view-sort">
+                    <h3 class="sub-heading">Sort base on:</h3>
+                    <form action="" id="sort-form">
+
+                        <input type="radio" id="default-sort-rb" name="sort" checked="true"> 
+                        <label for="default-sort-rb">No sorting</label><br>
+
+                        <input type="radio" id="name-sort-rb" name="sort"> 
+                        <label for="name-sort-rb">Movie title (A-Z)</label><br>
+
+                        <input type="radio" id="rating-sort-rb" name="sort"> 
+                        <label for="rating-sort-rb">Rating</label>  <br>
+                        
+                        <input type="radio" id="runtime-sort-rb" name="sort">
+                        <label for="runtime-sort-rb">Runtime</label>  <br>
+                        
+                        <input type="radio" id="year-sort-rb" name="sort"> 
+                        <label for="year-sort-rb">Year</label> <br>
+                    </form>
+                    <h3 class="sub-heading">Order:</h3>
+                    <form action="" id="order-form">
+                        <input type="radio" id="asc-order-rb" name="order"> 
+                        <label for="asc-order-rb">Ascending</label><br>
+
+                        <input type="radio" id="desc-order-rb" name="order" checked="true"> 
+                        <label for="desc-order-rb">Descending</label><br>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="movies-sec">
+            <div class="movies" id="movies">
+                <div class="movie hidden"> <!-- this div is a hidden template. it will be cloned then showed and used when adding a new movie-->
+                    <div class="movie-bck"></div>
+                    <div class="movie-cntrl">
+                        <div class="movie-edit" id="movie-edit"></div>
+                        <div class="movie-delete" id="movie-delete"></div>
+                    </div>
+                    <div class="movie-img-sec">
+                        <img src="" alt="movie-img" class="movie-img">
+                    </div>
+                    <div class="movie-info">
+                        <div class="info-tab">
+                            <div class="movie-titl"></div>
+                            <div class="movie-ovrview show">
+                                <div class="movie-year"></div>
+                                <div class="movie-runtime"></div>
+                                <div class="movie-rating-sec">
+                                    <div class="star"></div>
+                                    <div class="movie-rating"></div>
+                                </div>
+                            </div>
+                            <div class="movie-cast"></div>
+                            <div class="movie-plot"></div>
+                        </div>
+                        <div class="info-tab-slctor">
+                            <div class="tab-slctor movie-ovrview-tab-slctor selected">Overview</div>
+                            <div class="tab-slctor movie-cast-tab-slctor">Cast</div>
+                            <div class="tab-slctor movie-plot-tab-slctor">Plot</div>
+                        </div>
+                    </div>
+                    <div class="movie-edit-window">
+                        <div class="movie-edit-window-bck"></div>
+                        <h2 class="heading">Edit movie</h2>
+                        <form action="" id="add-movie">
+                          <label for="edit-movie-titl">Movie title</label> <br>
+                          <input type="text" id="edit-movie-titl"> <br>
+
+                          <label for="edit-movie-year">Year</label> <br>
+                          <input type="text" id="edit-movie-year"> <br>
+
+                          <label for="edit-movie-rating">Rating</label> <br>
+                          <input type="text" id="edit-movie-rating"> <br>
+
+                          <label for="edit-movie-runtime">Runtime (min)</label> <br>
+                          <input type="text" id="edit-movie-runtime"> <br>
+
+                          <label for="edit-movie-img-url">Image adress</label> <br>
+                          <input type="text" id="edit-movie-img-url"> <br>
+
+                          <label for="edit-movie-cast">Cast</label> <br>
+                          <input type="text" id="edit-movie-cast"> <br>
+
+                          <label for="edit-movie-plot">plot</label> <br>
+                          <input type="text" id="edit-movie-plot"> <br>
+
+                          <input type="button" id="edit-movie-save-btn" value="Save">
+                          <input type="button" id="edit-movie-cancel-btn" value="Cancel">
+
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </main>
+    <footer>
+            Developed by Khaled Kanaan <br>
+            As part of the Founders and Coders application process <br>
+            November 2022 <br><br>
+    </footer>
+</body>
+<!-- <script src="movieData.js"></script> -->
+<script src="script.js"></script>
+</html>
